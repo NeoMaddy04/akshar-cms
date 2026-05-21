@@ -14,6 +14,10 @@ export const DEFAULT_CONTENT: Record<string, Record<string, string>> = {
     heritage_text2: "Every project is a testament to meticulous planning, where Er. Uma Maheswari's technical prowess ensures that every beam is placed with precision, and every finish reflects the homeowner's soul. Our approach is holistic—viewing a home as a singular, living organism from foundation to upholstery.",
     founder_name: "Er. Uma Maheswari",
     founder_desc: "With over two decades of experience in structural engineering and a Master's degree in Engineering, Uma Maheswari brings a rare depth of technical knowledge to the world of residential luxury. Her philosophy is simple: a beautiful home is only as good as its engineering foundation.",
+    stat_1_number: "20+",
+    stat_1_label: "Years Exp",
+    stat_2_number: "150+",
+    stat_2_label: "Homes Built",
   },
   services: {
     hero_title: "Meticulous Craftsmanship, Engineering Precision.",

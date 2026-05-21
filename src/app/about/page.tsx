@@ -64,12 +64,12 @@ export default async function About() {
               <div className="pt-6 border-t border-outline/20">
                 <div className="flex gap-12">
                   <div>
-                    <span className="block font-headline-lg text-headline-lg text-primary font-bold">20+</span>
-                    <span className="font-label-md text-label-md text-on-surface-variant uppercase text-xs tracking-wider">Years Exp</span>
+                    <span className="block font-headline-lg text-headline-lg text-primary font-bold">{content.stat_1_number}</span>
+                    <span className="font-label-md text-label-md text-on-surface-variant uppercase text-xs tracking-wider">{content.stat_1_label}</span>
                   </div>
                   <div>
-                    <span className="block font-headline-lg text-headline-lg text-primary font-bold">150+</span>
-                    <span className="font-label-md text-label-md text-on-surface-variant uppercase text-xs tracking-wider">Homes Built</span>
+                    <span className="block font-headline-lg text-headline-lg text-primary font-bold">{content.stat_2_number}</span>
+                    <span className="font-label-md text-label-md text-on-surface-variant uppercase text-xs tracking-wider">{content.stat_2_label}</span>
                   </div>
                 </div>
               </div>
