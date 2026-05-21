@@ -79,7 +79,7 @@ export default async function AdminDashboard() {
             <p className="text-on-surface-variant">No projects found. Add one above.</p>
           ) : (
             <div className="space-y-4">
-              {projects.map((proj) => (
+              {projects.map((proj: any) => (
                 <div key={proj.id} className="flex justify-between items-center border-b border-outline-variant/10 pb-4">
                   <div className="flex items-center gap-4">
                     <img src={proj.imageUrl} alt={proj.title} className="w-16 h-16 object-cover rounded-sm" />
