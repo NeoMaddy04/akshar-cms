@@ -2,6 +2,7 @@ import React from "react";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import PageContentManager from "./PageContentManager";
 
 export default async function AdminDashboard() {
   const projects = await prisma.project.findMany({
@@ -99,6 +100,8 @@ export default async function AdminDashboard() {
             </div>
           )}
         </div>
+
+        <PageContentManager />
       </div>
     </div>
   );

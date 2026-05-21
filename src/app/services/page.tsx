@@ -1,15 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import { getPageContent } from "@/lib/content";
 
-export default function Services() {
+export default async function Services() {
+  const content = await getPageContent("services");
   return (
     <>
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20 pt-20">
         <div className="max-w-3xl">
           <span className="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] mb-4 block">Our Expertise</span>
-          <h1 className="font-display-lg text-display-lg text-primary mb-6 leading-tight">Meticulous Craftsmanship, Engineering Precision.</h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-            We bridge the gap between architectural vision and structural reality. Every project at Akshar Construction is a testament to our commitment to durability, aesthetic refinement, and premium living standards.
+          <h1 className="font-display-lg text-display-lg text-primary mb-6 leading-tight whitespace-pre-line">{content.hero_title}</h1>
+          <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed whitespace-pre-line">
+            {content.hero_desc}
           </p>
         </div>
       </section>

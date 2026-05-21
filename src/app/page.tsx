@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { getPageContent } from "@/lib/content";
 import ProjectGrid from "@/components/ProjectGrid";
-import { useModal } from "@/components/ModalProvider";
 
 export default async function Home() {
+  const content = await getPageContent("home");
+
   const dbProjects = await prisma.project.findMany({
     orderBy: { createdAt: "desc" },
   });
@@ -57,7 +59,7 @@ export default async function Home() {
           <img
             className="w-full h-full object-cover"
             alt="Hero Background"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdnGjI5Q_6F-VbpWRyc_VzpZBs6jvt5G3Ld6TZLHdF2GOUqCBj3s1Nxrz692YP9qyq4pQtPcm54x9_uDBVgXL7at1GrhdjXx0W7tTuJz_zgXskkqGVmteTL58SY3_0bQVwASa-0bwnQpzB6K23rkqW9ha5inFmPtvYCKqufVIPWRS66L2lgcX2hAf3-EdtfJILIfXaaPlo1yILbfRO6EH-em0t5_6Eh6uGp4MG0msfd8P9UVIdzMgMumfp3ggd5cUG7qZo_ChhYfc"
+            src={content.hero_image}
           />
         </div>
         <div className="relative z-20 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
@@ -65,11 +67,11 @@ export default async function Home() {
             <span className="inline-block bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md uppercase tracking-widest px-4 py-1 mb-6 rounded-sm">
               Established Excellence
             </span>
-            <h1 className="font-display-lg text-display-lg text-white mb-6 leading-tight">
-              Engineering Homes with <span className="text-secondary-fixed-dim">Meticulous Precision.</span>
+            <h1 className="font-display-lg text-display-lg text-white mb-6 leading-tight whitespace-pre-line">
+              {content.hero_title}
             </h1>
-            <p className="font-body-lg text-body-lg text-white/90 mb-10 max-w-xl">
-              Led by Er. Uma Maheswari B.E, M.E, we blend structural integrity with aesthetic brilliance to build spaces that stand the test of time.
+            <p className="font-body-lg text-body-lg text-white/90 mb-10 max-w-xl whitespace-pre-line">
+              {content.hero_subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -201,11 +203,11 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <span className="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] mb-4 block">Our Philosophy</span>
-              <h2 className="font-display-lg text-display-lg text-white mb-8 leading-tight">
-                The Engineering <br /><span className="text-secondary-fixed">Difference.</span>
+              <h2 className="font-display-lg text-display-lg text-white mb-8 leading-tight whitespace-pre-line">
+                {content.philosophy_title}
               </h2>
-              <p className="font-body-lg text-body-lg text-on-primary-container mb-12">
-                With advanced degrees in engineering (B.E, M.E), Er. Uma Maheswari leads Akshar Construction with a philosophy that beauty must be underpinned by uncompromising structural strength.
+              <p className="font-body-lg text-body-lg text-on-primary-container mb-12 whitespace-pre-line">
+                {content.philosophy_text}
               </p>
 
               <div className="space-y-8">

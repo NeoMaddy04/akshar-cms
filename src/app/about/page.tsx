@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { getPageContent } from "@/lib/content";
 
-export default function About() {
+export default async function About() {
+  const content = await getPageContent("about");
   return (
     <>
       <section className="relative h-[480px] flex items-center overflow-hidden">
@@ -12,7 +14,7 @@ export default function About() {
         <div className="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-white">
           <div className="max-w-2xl">
             <span className="font-label-md text-label-md uppercase tracking-[0.2em] text-[#C5A367] block mb-4">Precision in Every Pillar</span>
-            <h1 className="font-display-lg text-display-lg font-bold mb-6 leading-tight">Engineering Excellence meets Interior Aesthetics</h1>
+            <h1 className="font-display-lg text-display-lg font-bold mb-6 leading-tight whitespace-pre-line">{content.hero_title}</h1>
             <div className="w-24 h-1 bg-[#C5A367] mb-8"></div>
           </div>
         </div>
@@ -23,11 +25,11 @@ export default function About() {
           <div className="lg:col-span-7 flex flex-col justify-center">
             <span className="font-label-md text-label-md text-[#755A25] uppercase tracking-[0.2em] mb-3 block">Our Heritage</span>
             <h2 className="font-headline-lg text-headline-lg text-primary mb-6 leading-tight">A Legacy Built on Structural Integrity</h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
-              At Akshar Construction, we don't just build houses; we engineer sanctuaries. Founded on the principle that aesthetic beauty must be rooted in structural perfection, we bridge the gap between heavy-duty civil engineering and high-end interior design.
+            <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed whitespace-pre-line">
+              {content.heritage_text1}
             </p>
-            <p className="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
-              Every project is a testament to meticulous planning, where Er. Uma Maheswari's technical prowess ensures that every beam is placed with precision, and every finish reflects the homeowner's soul. Our approach is holistic—viewing a home as a singular, living organism from foundation to upholstery.
+            <p className="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed whitespace-pre-line">
+              {content.heritage_text2}
             </p>
           </div>
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
@@ -51,11 +53,11 @@ export default function About() {
           </div>
           <div className="w-full md:w-1/2">
             <span className="font-label-md text-label-md uppercase tracking-wider text-secondary mb-4 block">The Visionary</span>
-            <h2 className="font-headline-lg text-headline-lg text-primary font-bold mb-2">Er. Uma Maheswari</h2>
+            <h2 className="font-headline-lg text-headline-lg text-primary font-bold mb-2">{content.founder_name}</h2>
             <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-8">B.E, M.E – Principal Engineer & Founder</p>
             <div className="space-y-6">
-              <p className="text-on-surface-variant leading-relaxed">
-                With over two decades of experience in structural engineering and a Master's degree in Engineering, Uma Maheswari brings a rare depth of technical knowledge to the world of residential luxury. Her philosophy is simple: a beautiful home is only as good as its engineering foundation.
+              <p className="text-on-surface-variant leading-relaxed whitespace-pre-line">
+                {content.founder_desc}
               </p>
               <div className="pt-6 border-t border-outline/20">
                 <div className="flex gap-12">
