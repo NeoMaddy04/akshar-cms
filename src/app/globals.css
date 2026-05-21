@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* Shared CSS Enhancements for Akshar Construction */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .nav-link-underline {
+    @apply relative;
+  }
+  .nav-link-underline::after {
+    content: '';
+    @apply absolute bottom-[-4px] left-0 w-0 h-[2px] bg-[#C5A367] transition-all duration-300;
+  }
+  .nav-link-underline:hover::after,
+  .nav-link-active::after {
+    @apply w-full;
+  }
+
+  .toast-slide-in {
+    animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .toast-fade-out {
+    animation: fadeOut 0.4s ease forwards;
+  }
+  .toast-progress {
+    animation: progressShrink 4s linear forwards;
+  }
+}
+
+/* Custom Scrollbar for Luxury Aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #12181C;
+}
+::-webkit-scrollbar-thumb {
+  background: #755A25;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A367;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes progressShrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
