@@ -4,6 +4,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import PageContentManager from "./PageContentManager";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
   const projects = await prisma.project.findMany({
     orderBy: { createdAt: "desc" },
