@@ -67,7 +67,7 @@ export default async function Home() {
         <div className="relative z-20 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="max-w-2xl">
             <span className="inline-block bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md uppercase tracking-widest px-4 py-1 mb-6 rounded-sm">
-              Established Excellence
+              {content.hero_tagline}
             </span>
             <h1 className="font-display-lg text-display-lg text-white mb-6 leading-tight whitespace-pre-line">
               {content.hero_title}
@@ -98,14 +98,14 @@ export default async function Home() {
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-end mb-16">
             <div className="lg:col-span-8">
-              <h2 className="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] mb-4">Core Competencies</h2>
-              <h3 className="font-headline-lg text-headline-lg text-primary md:text-display-lg max-w-3xl leading-tight">
-                Architectural Mastery Meets Structural Engineering.
+              <h2 className="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] mb-4">{content.competencies_tagline}</h2>
+              <h3 className="font-headline-lg text-headline-lg text-primary md:text-display-lg max-w-3xl leading-tight whitespace-pre-line">
+                {content.competencies_title}
               </h3>
             </div>
             <div className="lg:col-span-4 lg:text-right">
-              <p className="font-body-md text-body-md text-on-surface-variant italic">
-                "We don't just build houses; we curate experiences for a lifetime."
+              <p className="font-body-md text-body-md text-on-surface-variant italic whitespace-pre-line">
+                {content.competencies_quote}
               </p>
             </div>
           </div>
@@ -116,9 +116,9 @@ export default async function Home() {
                 <div className="mb-8 inline-flex items-center justify-center w-16 h-16 bg-surface-container text-secondary group-hover:bg-secondary-fixed transition-colors duration-500 rounded-sm">
                   <span className="material-symbols-outlined text-4xl">domain</span>
                 </div>
-                <h4 className="font-headline-md text-headline-md text-primary mb-4">Residential Construction</h4>
-                <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                  From initial foundation to the final roofing, our civil engineering expertise ensures every structure is safe, durable, and grand.
+                <h4 className="font-headline-md text-headline-md text-primary mb-4">{content.service1_title}</h4>
+                <p className="font-body-md text-body-md text-on-surface-variant mb-6 whitespace-pre-line">
+                  {content.service1_desc}
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-3 font-label-md text-label-md text-on-surface-variant">
@@ -139,9 +139,9 @@ export default async function Home() {
                 <div className="mb-8 inline-flex items-center justify-center w-16 h-16 bg-surface-container text-secondary group-hover:bg-secondary-fixed transition-colors duration-500 rounded-sm">
                   <span className="material-symbols-outlined text-4xl">architecture</span>
                 </div>
-                <h4 className="font-headline-md text-headline-md text-primary mb-4">Interior Design</h4>
-                <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                  Bespoke interiors that reflect your personality. We focus on spatial efficiency, luxury finishes, and ergonomic flow.
+                <h4 className="font-headline-md text-headline-md text-primary mb-4">{content.service2_title}</h4>
+                <p className="font-body-md text-body-md text-on-surface-variant mb-6 whitespace-pre-line">
+                  {content.service2_desc}
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-3 font-label-md text-label-md text-on-surface-variant">
@@ -162,9 +162,9 @@ export default async function Home() {
                 <div className="mb-8 inline-flex items-center justify-center w-16 h-16 bg-surface-container text-secondary group-hover:bg-secondary-fixed transition-colors duration-500 rounded-sm">
                   <span className="material-symbols-outlined text-4xl">construction</span>
                 </div>
-                <h4 className="font-headline-md text-headline-md text-primary mb-4">Renovations</h4>
-                <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                  Breathing new life into existing spaces with modern upgrades while maintaining the structural integrity of the home.
+                <h4 className="font-headline-md text-headline-md text-primary mb-4">{content.service3_title}</h4>
+                <p className="font-body-md text-body-md text-on-surface-variant mb-6 whitespace-pre-line">
+                  {content.service3_desc}
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-3 font-label-md text-label-md text-on-surface-variant">
@@ -187,11 +187,11 @@ export default async function Home() {
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-baseline mb-16 gap-6">
             <div>
-              <span className="font-label-md text-label-md text-[#755A25] uppercase tracking-[0.2em] mb-3 block">Portfolio</span>
-              <h2 className="font-display-lg text-display-lg text-primary tracking-tight">Recent Projects</h2>
+              <span className="font-label-md text-label-md text-[#755A25] uppercase tracking-[0.2em] mb-3 block">{content.portfolio_tagline}</span>
+              <h2 className="font-display-lg text-display-lg text-primary tracking-tight whitespace-pre-line">{content.portfolio_title}</h2>
             </div>
-            <p className="text-on-surface-variant font-body-md max-w-md">
-              Explore our portfolio of meticulously executed residential projects that showcase our commitment to quality and design excellence.
+            <p className="text-on-surface-variant font-body-md max-w-md whitespace-pre-line">
+              {content.portfolio_desc}
             </p>
           </div>
           
@@ -204,7 +204,7 @@ export default async function Home() {
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <span className="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] mb-4 block">Our Philosophy</span>
+              <span className="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] mb-4 block">{content.philosophy_tagline}</span>
               <h2 className="font-display-lg text-display-lg text-white mb-8 leading-tight whitespace-pre-line">
                 {content.philosophy_title}
               </h2>
@@ -242,7 +242,7 @@ export default async function Home() {
               <img
                 className="relative z-10 w-full h-auto border border-white/10 shadow-2xl rounded-sm"
                 alt="Engineering difference"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ddyXGboWOqjR23uvdrMQ8uJ7h6vRDSPr0h0kCXbz809ZAFciNApy9bI50SJ0FPCmWzrD28gmiOQ9qeAYSAf1Uyo75n7uvSNbnA2rNUqYHoVomjXpf_5CAnnXxnqAJpD5gk8DSifoipZlCC5Kj7FLpoZ9ObNPjKMKmjATFH_1opPG2EeogFxPiU4KhEc0u-2W3oWjcCXFyHwrhRDEhcHhWzuqlJEo2z-a6XGRPPW3B1lYDZDSRhQWNkCVbECTapIYO6PmwRgamk8"
+                src={content.philosophy_image}
               />
             </div>
           </div>
