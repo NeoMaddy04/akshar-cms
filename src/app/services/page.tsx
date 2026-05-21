@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { getPageContent } from "@/lib/content";
 
+export const dynamic = "force-dynamic";
+
 export default async function Services() {
   const content = await getPageContent("services");
   return (

@@ -4,6 +4,8 @@ import { prisma } from "@/lib/prisma";
 import { getPageContent } from "@/lib/content";
 import ProjectGrid from "@/components/ProjectGrid";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const content = await getPageContent("home");
 
