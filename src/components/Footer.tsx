@@ -15,7 +15,7 @@ export default function Footer() {
             <img
               alt="Akshar Construction Logo"
               className="h-10 w-10 object-contain brightness-0 invert opacity-80"
-              src="https://lh3.googleusercontent.com/aida/ADBb0uhIeUC2VQPlRr-WtFtUeHn9I90zutIeCdqjO1_LtVT4bh6rHbQ_VSxxLuvNVyyOrhy_0A_4mY0cQP8HN8W1vtNZP7aUnAv7D2FI0Or0Rd9V2DKW5ssqgfXMSWmEG7vYQCfzC7ZgYmxrLk6rbEcYpMcnIja28i2e0IxNwk1_s700JmPNe_SaQ2_Vzs-OFC5_jJbpsNXOpNK87Ko8lopFlTvNFn5JTGGmI8gjDRSrLFos2x4ET7vopExaAfI"
+              src="/logo.png"
             />
             <span className="text-headline-md font-headline-md text-secondary-fixed font-bold tracking-tight">
               Akshar
