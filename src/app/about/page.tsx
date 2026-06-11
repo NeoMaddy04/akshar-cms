@@ -49,7 +49,7 @@ export default async function About() {
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row gap-16 items-center">
           <div className="w-full md:w-1/2 relative">
             <div className="aspect-[4/5] border border-outline/20 relative z-10 overflow-hidden rounded-sm">
-              <img className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" alt="Founder" src={content.founder_image}/>
+              <img className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" style={{ objectPosition: 'top' }} alt="Founder" src={content.founder_image}/>
             </div>
             <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary/10 -z-0 blur-xl"></div>
           </div>
