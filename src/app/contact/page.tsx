@@ -106,10 +106,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            
-            <div className="bg-surface-container border border-outline-variant/20 p-4 aspect-[600/1050] max-h-[350px] overflow-hidden rounded-sm shadow-sm flex items-center justify-center">
-              <img alt="Akshar Construction Business Card" className="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNSh_f226CJU0oYm9RcKU1t4Sip7qHZGKBLy-KFRlDL6rAcDSIkDCsGbHa7GRdTmlx0TSvGetIjOwmAfmfhdWYsUfyhjGcW4-m5kMu_K-rKqB8SaMa90wtQ3S4PWqGHu7TLhoJ2sUsZ4GHNA1WC1-vTqAiTHW4nhF-zwz9b5WrKWonLy6yCqFYnug2PThF9JBiycTuKOYehSW450Au3P7lBqQdeQdAQHLpjstZVfJ5ts2CV7LQrzi_1uQy_dXN74fSTLaCB9hGfZ4"/>
-            </div>
           </div>
         </div>
       </section>
