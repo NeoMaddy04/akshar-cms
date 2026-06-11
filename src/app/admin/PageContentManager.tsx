@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { DEFAULT_CONTENT } from "@/lib/content";
 import { put } from "@vercel/blob";
+import { cookies } from "next/headers";
+import crypto from "crypto";
 
 export default async function PageContentManager() {
   const allPageContent = await prisma.pageContent.findMany();
@@ -10,6 +12,18 @@ export default async function PageContentManager() {
 
   async function updateContent(formData: FormData) {
     "use server";
+    
+    // Verify session
+    const cookieStore = await cookies();
+    const sessionToken = cookieStore.get("akshar_admin_session")?.value;
+    const expectedToken = crypto.createHmac('sha256', 'akshar_secret_salt_123')
+      .update(process.env.ADMIN_PASSWORD || "admin123")
+      .digest('hex');
+
+    if (sessionToken !== expectedToken) {
+      throw new Error("Unauthorized");
+    }
+
     const page = formData.get("page") as string;
     const key = formData.get("key") as string;
     let value = formData.get("value") as string;

@@ -2,17 +2,34 @@ import React from "react";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
+import crypto from "crypto";
 import PageContentManager from "./PageContentManager";
 
 export const dynamic = "force-dynamic";
 
+async function verifyAuth() {
+  const cookieStore = await cookies();
+  const sessionToken = cookieStore.get("akshar_admin_session")?.value;
+  const expectedToken = crypto.createHmac('sha256', 'akshar_secret_salt_123')
+    .update(process.env.ADMIN_PASSWORD || "admin123")
+    .digest('hex');
+
+  if (sessionToken !== expectedToken) {
+    redirect("/admin/login");
+  }
+}
+
 export default async function AdminDashboard() {
+  await verifyAuth();
+
   const projects = await prisma.project.findMany({
     orderBy: { createdAt: "desc" },
   });
 
   async function createProject(formData: FormData) {
     "use server";
+    await verifyAuth();
     
     const title = formData.get("title") as string;
     const category = formData.get("category") as string;
@@ -32,6 +49,8 @@ export default async function AdminDashboard() {
 
   async function deleteProject(formData: FormData) {
     "use server";
+    await verifyAuth();
+    
     const id = formData.get("id") as string;
     await prisma.project.delete({ where: { id } });
     revalidatePath("/");
@@ -39,10 +58,25 @@ export default async function AdminDashboard() {
     redirect("/admin");
   }
 
+  async function logout() {
+    "use server";
+    const cookieStore = await cookies();
+    cookieStore.delete("akshar_admin_session");
+    redirect("/admin/login");
+  }
+
   return (
     <div className="min-h-screen bg-surface py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-display-lg font-bold text-primary mb-8">Admin Dashboard</h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-display-lg font-bold text-primary">Admin Dashboard</h1>
+          <form action={logout}>
+            <button type="submit" className="bg-slate-100 hover:bg-red-500 hover:text-white border border-outline-variant/30 px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-sm transition-colors cursor-pointer flex items-center gap-2">
+              <span className="material-symbols-outlined text-sm">logout</span>
+              Logout
+            </button>
+          </form>
+        </div>
         
         <div className="bg-white p-8 border border-outline-variant/20 shadow-sm rounded-sm mb-12">
           <h2 className="text-headline-md font-semibold text-primary mb-6">Add New Project</h2>
