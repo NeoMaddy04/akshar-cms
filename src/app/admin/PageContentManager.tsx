@@ -17,7 +17,7 @@ export default async function PageContentManager() {
     const cookieStore = await cookies();
     const sessionToken = cookieStore.get("akshar_admin_session")?.value;
     const expectedToken = crypto.createHmac('sha256', 'akshar_secret_salt_123')
-      .update(process.env.ADMIN_PASSWORD || "admin123")
+      .update(process.env.ADMIN_PASSWORD || "M@ng0482610")
       .digest('hex');
 
     if (sessionToken !== expectedToken) {

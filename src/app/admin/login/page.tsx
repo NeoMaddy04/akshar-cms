@@ -13,7 +13,7 @@ export default async function LoginPage(props: { searchParams: Promise<{ error?:
     const password = formData.get("password") as string;
 
     const expectedUsername = process.env.ADMIN_USERNAME || "admin";
-    const expectedPassword = process.env.ADMIN_PASSWORD || "admin123";
+    const expectedPassword = process.env.ADMIN_PASSWORD || "M@ng0482610";
 
     if (username === expectedUsername && password === expectedPassword) {
       const token = crypto.createHmac('sha256', 'akshar_secret_salt_123')
